@@ -3,12 +3,12 @@ import QtQuick.Controls
 
 ApplicationWindow {
     visible: true
-    width: 280
-    height: 80
+    width: 1600
+    height: 900
     title: "Sensor Control App"
 
-    Label {
-        text: "Olá, mundo!"
-        anchors.centerIn: parent
+
+    Loader {
+        source: "components/controls.qml"
     }
 }
