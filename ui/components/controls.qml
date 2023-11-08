@@ -3,13 +3,29 @@ import QtQuick.Controls
 
 Item{
     width: 200
-    height: 100
+    height: 200
 
-    Button {
-        text: "Iniciar a leitura"
-        //onClicked: {
-            // logica para inic leitura
-        //}
+    Column {
+        spacing: 10
         anchors.centerIn: parent
+
+        Button {
+            text: "Iniciar Leitura"
+            onClicked: {
+                // logica para inic leitura
+            }
+        }
+
+        Button {
+            text: "Parar Leitura"
+            onClicked: {
+            }
+        }
+
+        Button {
+            text: "Enviar Comando"
+            onClicked: {
+            }
+        }
     }
 }
