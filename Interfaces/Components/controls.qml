@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 
-Item{
+Item {
     width: 200
     height: 200
 

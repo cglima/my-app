@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Controls.Material
 
 ApplicationWindow {
     visible: true
@@ -7,8 +8,15 @@ ApplicationWindow {
     height: 900
     title: "Sensor Control App"
 
+    Material.theme: Material.Dark
+    Material.accent: Material.Red
 
-    Loader {
-        source: "components/controls.qml"
+    Item {
+        id: root
+        anchors.fill: parent
+
+        Loader {
+            source: "components/controls.qml"
+        }
     }
 }
