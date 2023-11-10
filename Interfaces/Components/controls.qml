@@ -1,31 +1,35 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 
-Item {
-    width: 200
-    height: 200
+ColumnLayout {
+    anchors.fill: parent
+    anchors.margins: 10
 
-    Column {
-        spacing: 10
-        anchors.centerIn: parent
-
-        Button {
-            text: "Iniciar Leitura"
-            onClicked: {
-                // logica para inic leitura
-            }
+        Label {
+            text: "Controle de Sensores Inerciais - versão: 1.0"
+            font.pixelSize: 24
+            font.bold: true
+            topPadding: 20
         }
 
-        Button {
-            text: "Parar Leitura"
-            onClicked: {
-            }
+    RowLayout {
+        Layout.alignment: Qt.AlignTop
+
+        Label {
+            text: "ID do Voluntário:"
+            font.pixelSize: 18
+            topPadding: 20
         }
 
-        Button {
-            text: "Enviar Comando"
-            onClicked: {
-            }
+        TextField {
+            placeholderText: "Nº do ID"
+            font.pixelSize: 18
+            topPadding: 20
         }
     }
 }
+
+
+
+
