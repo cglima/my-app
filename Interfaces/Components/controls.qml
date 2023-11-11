@@ -2,33 +2,101 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-ColumnLayout {
+Item {
     anchors.fill: parent
     anchors.margins: 10
 
-        Label {
-            text: "Controle de Sensores Inerciais - versão: 1.0"
-            font.pixelSize: 24
-            font.bold: true
-            topPadding: 20
+    ColumnLayout {
+        RowLayout{
+            Label {
+                text: "Controle de Sensores Inerciais - versão: 1.0"
+                font.pixelSize: 24
+                font.bold: true
+                color: "white"
+                topPadding: 20
+            }
         }
 
-    RowLayout {
-        Layout.alignment: Qt.AlignTop
+        RowLayout{
+            Button {
+                id: btnConectarUSB
+                text: "Conectar a porta USB"
+                font.pixelSize: 18
+                onClicked: {
+                console.log("Conectando a porta USB")
+                }
+            }
 
-        Label {
-            text: "ID do Voluntário:"
-            font.pixelSize: 18
-            topPadding: 20
+            ColumnLayout{
+                Label {
+                    text: "Status da conexão:"
+                    font.pixelSize: 18
+                    color: "white"
+                }
+
+                ComboBox {
+                    model: ["First", "Second", "Third"]
+                }
+            }
+
+            Label {
+                text: "ID do Voluntário:"
+                font.pixelSize: 18
+                color: "white"
+            }
         }
 
-        TextField {
-            placeholderText: "Nº do ID"
-            font.pixelSize: 18
-            topPadding: 20
+        RowLayout{
+            Label {
+                text: "Escolha uma tarefa"
+                color: "white"
+            }
+
+            ButtonGroup {
+                buttons: tarefas.children
+            }
+
+            Row {
+                id: tarefas
+
+                RadioButton {
+                    checked: true
+                    text: qsTr("DAB")
+                }
+
+                RadioButton {
+                    text: qsTr("FM")
+                }
+
+                RadioButton {
+                    text: qsTr("AM")
+                }
+            }
         }
     }
 }
+
+
+
+
+
+
+    // RowLayout {
+    //     Layout.alignment: Qt.AlignTop
+
+    //     Label {
+    //         text: "ID do Voluntário:"
+    //         font.pixelSize: 18
+    //         topPadding: 20
+    //     }
+
+    //     TextField {
+    //         placeholderText: "Nº do ID"
+    //         font.pixelSize: 18
+    //         topPadding: 20
+    //     }
+    // }
+
 
 
 
